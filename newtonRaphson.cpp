@@ -40,7 +40,10 @@ main(){
 void ingresarDatos(){
 	cout<<"Metodo de Newton-Raphson"<<endl<<endl;
 	cout<<"1.f(x) = x^4 - 3x^2 - 3 "<<endl;//tiene raiz en el intervalo [1, 2]
-	cout<<"Ingrese el numero de la funcion:";
+	cout<<"2.f(x) = x^3 - 2x^2 - 5 "<<endl;//encontrar raices en los intervalos [-3, -2], [-1, 0] y [0, 1]
+	cout<<"3.f(x) = 2^x - 6cos(x) "<<endl;//encontrar la raiz y compararla con el metodo de biseccion
+	cout<<"4.f(x) = 230x^4 + 18x^3 + 9x^2 - 221x - 9"<<endl;//encontrar la raiz y comprarala con el metodo de punto fijo
+	cout<<"Ingrese el numero de la funcion: ";
 	cin>>numFuncion;
 	cout<<"Ingrese el punto inicial: ";
 	cin>>puntoInicial;
@@ -83,11 +86,29 @@ void newtonRaphson(){
 float FX(float x, int numFuncion){
 	if(numFuncion == 1)
 		return pow(x, 4) - 3 * pow(x, 2) - 3;
+	
+	if(numFuncion == 2)
+		return pow(x, 3) - 2 * pow(x, 2) - 5;
+		
+	if(numFuncion == 3)
+		return pow(2, x) - 6 * cos(x);
+	
+	if(numFuncion == 4)
+		return 230 * pow(x, 4) + 18 * pow(x, 3) + 9 * pow(x, 2) - 221 * x - 9;
 }
 
 float primeraDerivadaFX(float x, int numFuncion){
 	if(numFuncion == 1)
 		return 4 * pow(x, 3) - 6 * x;
+	
+	if(numFuncion == 2)
+		return 3 * pow(x, 2) - 4 * x;
+	
+	if(numFuncion == 3)
+		return log(2) * pow(2, x) + 6 * sin(x);
+	
+	if(numFuncion == 4)
+		return 920 * pow(x, 3) + 54 * pow(x, 2) + 18 * x - 221;
 }
 
 float calcularErrorAbs(float p, float puntoInicial){
