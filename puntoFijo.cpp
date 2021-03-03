@@ -47,6 +47,7 @@ void ingreseDatos(){
 	cout<<"3.f(x) = x^4-3x^2-3=0 Transformacion: g(x) = ((3x - x) / x^2)^1/2"<<endl;
 	cout<<"4.f(x) = x^3+4x^2-10=0 Transformacion: g(x) = (1/2)(10 - x^3)^1/2"<<endl;
 	cout<<"5.f(x) = x^3+4x^2-10=0 Transformacion: g(x) = (10 / (4 + x))^1/2"<<endl;
+	cout<<"6.f(x) = 230x^4+18x^3+9x^2-221x-9=0 Transformacion: g(x) = 230x^4/221 + 18x^3/221 + 9x^2/221 - 9/221 ";
 	cin>>numFuncion;
 	cout<<"Ingrese el punto inicial: ";
 	cin>>puntoInicial;
@@ -89,6 +90,9 @@ float ejecutarFuncionF(float x, int numFuncion){
 	
 	if(numFuncion == 5)
 		return pow(x, 3) + 4 * pow(x, 2) - 10;
+	
+	if(numFuncion == 6)
+		return 230 * pow(x, 4) + 18 * pow(x, 3) + 9 * pow(x, 2) - 221 + x -9;
 }
 float ejecutarFuncionG(float x, int numFuncion){
 	if(numFuncion == 1)
@@ -105,7 +109,9 @@ float ejecutarFuncionG(float x, int numFuncion){
 	
 	if(numFuncion == 5)
 		return pow(10/(4+x), 0.5);//Esto transformacion funciona para cualquier punto de la funcionX
-		
+	
+	if(numFuncion == 6)
+		return ((230 * pow(x, 4)) / 221) + ((18 * pow(x, 3))/ 221) + ((9 * pow(x, 2)) / 221)- ((221 + x)/ 221) - (9 / 221);
 }
 float calcularError(float p, float puntoInicial){
 	return (p-puntoInicial) / p;
