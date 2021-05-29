@@ -53,7 +53,8 @@ void jacobi(int l, float x[], float a[][10], float b[]){
 	}
 	cout<<"La solucion de la ecuacion es:"<<endl;
 	for(i = 0; i < l; i++)
-		cout<<"x("<<i<<") = "<<x[i]<<endl;
+		printf("x%i = %4.15f\n", i, x[i]);
+//		cout<<"x("<<i<<") = "<<x[i]<<endl;
 }
 
 

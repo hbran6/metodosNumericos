@@ -2,6 +2,7 @@
 Herber Bran
 Universidad Mariano Galvez de Guatemala
 Metodos Numericos
+2021-05-28
 
 Metodo de Jacobi
 */
@@ -49,10 +50,12 @@ int main(){
 	do{
 		for(int i = 0; i < n; i++){
 			for(int j = 0; j < n; j++){
+				//se agrega el valor de la posicion de la matriz aumentada a un vector para hacer el calculo en la funcion seidel
 				aux[j] = a[i][j];
 			}
 			x[i] = (1 / a[i][i]) * (b[i] - jacobi(aux, xAnt, i));
 			error[i] = obtenerError(x, xAnt, i);
+//			aqui no se cambia el valor anterior, se usa el valor inicial que ingreso el usuario
 		}
 		
 		for(int i = 0; i < n; i++){
