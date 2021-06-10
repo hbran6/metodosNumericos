@@ -18,17 +18,17 @@ Descripcion: Metodo de Newton-Raphson
 using namespace std;
 
 int numFuncion, inicioY = 1, iteracionesMaximas, i;
-float puntoInicial, p, tolerancia, errorAbs;
+double puntoInicial, p, tolerancia, errorAbs;
 bool exito;
 
 void ingresarDatos();
 void newtonRaphson();
-float FX(float, int);
-float primeraDerivadaFX(float, int);
+double FX(double, int);
+double primeraDerivadaFX(double, int);
 void resultado(bool);
 void mostrarIteracion();
 void encabezadoTabla();
-float calcularErrorAbs(float, float);
+double calcularErrorAbs(double, double);
 void gotoxy(int, int);
 
 main(){
@@ -68,7 +68,7 @@ void newtonRaphson(){
 	exito = false;
 	while(i <= iteracionesMaximas && exito == false){
 		p = puntoInicial - (FX(puntoInicial, numFuncion) / primeraDerivadaFX(puntoInicial, numFuncion));
-		errorAbs = calcularErrorAbs(p, puntoInicial);
+		errorAbs = abs((p-puntoInicial)/p);
 		mostrarIteracion();
 		if(errorAbs < tolerancia){
 			exito = true;
@@ -81,17 +81,17 @@ void newtonRaphson(){
 		resultado(exito);
 }
 
-float FX(float x, int numFuncion){
+double FX(double x, int numFuncion){
 	if(numFuncion == 1)
 		return pow(x, 3) + 5 * pow(x, 2) - 5;
 }
 
-float primeraDerivadaFX(float x, int numFuncion){
+double primeraDerivadaFX(double x, int numFuncion){
 	if(numFuncion == 1)
 		return 3 * pow(x, 2) + 10 * x;
 }
 
-float calcularErrorAbs(float p, float puntoInicial){
+double calcularErrorAbs(double p, double puntoInicial){
 	return abs((p-puntoInicial) / p);
 }
 
