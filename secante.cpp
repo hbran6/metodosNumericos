@@ -3,7 +3,7 @@ Herber Bran
 Universidad Mariano Galvez de Guatemala
 Metodos Numericos
 
-Metodo de la secante
+Metodo de la Secante
 */
 #include <stdio.h>
 #include <iostream>
