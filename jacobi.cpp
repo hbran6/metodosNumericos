@@ -3,7 +3,7 @@ Herber Bran
 Universidad Mariano Galvez de Guatemala
 Metodos Numericos
 
-Metodo de Jacobi
+Metodo Jacobi
 */
 #include<iostream>
 #define n 10
